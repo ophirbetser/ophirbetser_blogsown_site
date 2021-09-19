@@ -38,7 +38,7 @@
     <loc>https://academic-demo.netlify.app/category/demo/</loc>
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://academic-demo.netlify.app/author/nelson-bighetti/</loc>
+    <loc>https://academic-demo.netlify.app/author/ophir-betser/</loc>
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://academic-demo.netlify.app/post/</loc>
@@ -132,5 +132,7 @@
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://academic-demo.netlify.app/admin/</loc>
+  </url><url>
+    <loc>https://academic-demo.netlify.app/post/new_post/new_post/</loc>
   </url>
 </urlset>
