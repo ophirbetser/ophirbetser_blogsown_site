@@ -1,7 +1,6 @@
 ---
-title: "עברית בקובץ מארק-דאון?"
+title: "עברית בקובץ מארק-דאון"
 output: html_document
-date: '2021-09-29'
 ---
 
 <html dir="rtl">
@@ -61,4 +60,6 @@ html
 plot(pressure)
 ```
 </div>
+
+
 

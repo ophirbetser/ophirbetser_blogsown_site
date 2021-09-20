@@ -117,7 +117,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-732416598&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-823651497&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -127,7 +127,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-732416598&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-823651497&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -476,6 +476,33 @@ date: 2019-09-01
 &lt;p&gt;You can also embed plots, for example:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://ophirbetser.netlify.app/post/first_fully_heb_post/rmdpost_files/figure-html/pressure-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Note that the &lt;code&gt;echo = FALSE&lt;/code&gt; parameter was added to the code chunk to prevent printing of the R code that generated the plot.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>עברית בקובץ מארק-דאון</title>
+      <link>https://ophirbetser.netlify.app/post/first_fully_heb_post/psot_2021_09_19/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ophirbetser.netlify.app/post/first_fully_heb_post/psot_2021_09_19/</guid>
+      <description>
+&lt;script src=&#34;https://ophirbetser.netlify.app/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;html dir=&#34;rtl&#34;&gt;
+&lt;div id=&#34;עברית&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;עברית&lt;/h2&gt;
+&lt;p&gt;שלום לכולם וברוכים הבאים לבלוג שלי.&lt;/p&gt;
+&lt;p&gt;אני רוצה לוודא שככה אפשר לכתוב בעברית - בישור הטקסט מימין לשמאל.&lt;/p&gt;
+&lt;p&gt;בוא נעלה את הדף לאוויר!&lt;/p&gt;
+&lt;p&gt;מדהים, זה עובד!&lt;/p&gt;
+&lt;p&gt;ואפילו אפשר להציג קוד
+R
+בישור רגיל, בעזרת קסם של
+html&lt;/p&gt;
+&lt;div dir=&#34;ltr&#34;&gt;
+&lt;p&gt;&lt;img src=&#34;https://ophirbetser.netlify.app/post/first_fully_heb_post/psot_2021_09_19_files/figure-html/pressure-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 </description>
     </item>
