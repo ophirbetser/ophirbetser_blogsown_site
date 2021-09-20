@@ -62,4 +62,3 @@ plot(pressure)
 ```
 </div>
 
-<html dir="ltr">
