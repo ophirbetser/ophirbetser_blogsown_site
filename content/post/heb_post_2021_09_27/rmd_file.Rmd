@@ -4,7 +4,7 @@ date: "2020-09-27T00:00:00Z"
 output: html_document
 
 image:
-  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/CpkOjOcXdUY)'
+  caption: ![](https://images.unsplash.com/reserve/Af0sF2OS5S5gatqrKzVP_Silhoutte.jpg?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHBpY3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80)
   focal_point: ""
   placement: 2
   preview_only: false
@@ -26,12 +26,9 @@ tags:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-![](https://images.unsplash.com/reserve/Af0sF2OS5S5gatqrKzVP_Silhoutte.jpg?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHBpY3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80)
 
 
 # שלום
-
-![](https://images.unsplash.com/reserve/Af0sF2OS5S5gatqrKzVP_Silhoutte.jpg?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHBpY3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80)
 
 שלום לכול מי שצופה באתר הזה. קוראים לי אופיר בצר ואני בונה דרך 
 R 
