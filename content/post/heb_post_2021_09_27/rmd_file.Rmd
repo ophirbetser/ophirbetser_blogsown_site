@@ -1,6 +1,6 @@
 ---
 title: "פוסט פתיחת הבלוג"
-date: "2020-09-27"
+date: "2020-09-27T00:00:00Z"
 output: html_document
 ---
 
@@ -9,6 +9,9 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+![](https://images.unsplash.com/reserve/Af0sF2OS5S5gatqrKzVP_Silhoutte.jpg?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHBpY3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80)
+
 
 # שלום
 
