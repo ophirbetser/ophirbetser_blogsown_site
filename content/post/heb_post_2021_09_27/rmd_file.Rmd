@@ -1,0 +1,19 @@
+---
+title: "פוסט פתיחת הבלוג"
+output: html_document
+---
+
+<html dir="rtl">
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# שלום
+
+שלום לכול מי שצופנ האתר הזה. קוראים לי אופיר בצר ואני בונה דרך 
+R 
+את האתר הנחמד הזה.
+
+  
+מקווה שיהיה כיף ונחמד
