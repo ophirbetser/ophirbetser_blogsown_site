@@ -5,7 +5,7 @@
     <link>https://ophirbetser.netlify.app/post/</link>
       <atom:link href="https://ophirbetser.netlify.app/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 27 Sep 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://ophirbetser.netlify.app/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>Posts</title>
@@ -15,7 +15,7 @@
     <item>
       <title>פוסט בעברית</title>
       <link>https://ophirbetser.netlify.app/post/my_heb_post/heb_post/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 27 Sep 2020 00:00:00 +0000</pubDate>
       <guid>https://ophirbetser.netlify.app/post/my_heb_post/heb_post/</guid>
       <description>
 &lt;script src=&#34;https://ophirbetser.netlify.app/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
@@ -33,7 +33,7 @@
     <item>
       <title>פוסט פתיחת הבלוג</title>
       <link>https://ophirbetser.netlify.app/post/heb_post_2021_09_27/rmd_file/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 27 Sep 2020 00:00:00 +0000</pubDate>
       <guid>https://ophirbetser.netlify.app/post/heb_post_2021_09_27/rmd_file/</guid>
       <description>
 &lt;script src=&#34;https://ophirbetser.netlify.app/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
@@ -42,7 +42,7 @@
 &lt;html dir=&#34;rtl&#34;&gt;
 &lt;div id=&#34;שלום&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;שלום&lt;/h1&gt;
-&lt;p&gt;שלום לכול מי שצופנ האתר הזה. קוראים לי אופיר בצר ואני בונה דרך
+&lt;p&gt;שלום לכול מי שצופה באתר הזה. קוראים לי אופיר בצר ואני בונה דרך
 R
 את האתר הנחמד הזה.&lt;/p&gt;
 &lt;p&gt;מקווה שיהיה כיף ונחמד&lt;/p&gt;
