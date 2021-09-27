@@ -12,6 +12,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # שלום
 
+![](https://images.unsplash.com/reserve/Af0sF2OS5S5gatqrKzVP_Silhoutte.jpg?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHBpY3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80)
+
 שלום לכול מי שצופה באתר הזה. קוראים לי אופיר בצר ואני בונה דרך 
 R 
 את האתר הנחמד הזה.
