@@ -1,5 +1,5 @@
 ---
-bio: An opinion without data is just an opinion. Data without logic are just numbers.
+bio: An opinion without data is just an opinion. Data without logic is just numbers.
 education:
   courses:
   - course: BA in Economics
