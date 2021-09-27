@@ -20,70 +20,22 @@
     <loc>https://ophirbetser.netlify.app/event/</loc>
     <lastmod>2030-06-01T13:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ophirbetser.netlify.app/categories/</loc>
-    <lastmod>2021-09-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ophirbetser.netlify.app/post/2020-12-01-r-rmarkdown/</loc>
-    <lastmod>2021-09-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ophirbetser.netlify.app/tag/plot/</loc>
-    <lastmod>2021-09-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ophirbetser.netlify.app/post/</loc>
-    <lastmod>2021-09-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ophirbetser.netlify.app/category/r/</loc>
-    <lastmod>2021-09-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ophirbetser.netlify.app/tag/r-markdown/</loc>
-    <lastmod>2021-09-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ophirbetser.netlify.app/tag/regression/</loc>
-    <lastmod>2021-09-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ophirbetser.netlify.app/post/first_fully_heb_post/rmdpost/</loc>
-    <lastmod>2021-09-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ophirbetser.netlify.app/tags/</loc>
-    <lastmod>2021-09-22T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://ophirbetser.netlify.app/courses/</loc>
     <lastmod>2021-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ophirbetser.netlify.app/courses/example/</loc>
     <lastmod>2021-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ophirbetser.netlify.app/tag/academic/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ophirbetser.netlify.app/authors/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ophirbetser.netlify.app/category/demo/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ophirbetser.netlify.app/author/ophir-betser/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ophirbetser.netlify.app/post/getting-started/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ophirbetser.netlify.app/author/%E5%90%B3%E6%81%A9%E9%81%94/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ophirbetser.netlify.app/tag/%E5%BC%80%E6%BA%90/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ophirbetser.netlify.app/category/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ophirbetser.netlify.app/post/writing-technical-content/</loc>
-    <lastmod>2019-07-12T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://ophirbetser.netlify.app/publication-type/3/</loc>
     <lastmod>2019-04-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ophirbetser.netlify.app/publication/preprint/</loc>
+    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ophirbetser.netlify.app/authors/</loc>
+    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ophirbetser.netlify.app/author/ophir-betser/</loc>
     <lastmod>2019-04-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ophirbetser.netlify.app/publication_types/</loc>
@@ -95,8 +47,8 @@
     <loc>https://ophirbetser.netlify.app/tag/source-themes/</loc>
     <lastmod>2019-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ophirbetser.netlify.app/post/jupyter/</loc>
-    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
+    <loc>https://ophirbetser.netlify.app/tags/</loc>
+    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ophirbetser.netlify.app/slides/</loc>
     <lastmod>2019-02-05T00:00:00+00:00</lastmod>
@@ -136,10 +88,14 @@
   </url><url>
     <loc>https://ophirbetser.netlify.app/admin/</loc>
   </url><url>
+    <loc>https://ophirbetser.netlify.app/categories/</loc>
+  </url><url>
     <loc>https://ophirbetser.netlify.app/post/new_post/new_post/</loc>
   </url><url>
-    <loc>https://ophirbetser.netlify.app/post/first_fully_heb_post/psot_2021_09_19/</loc>
+    <loc>https://ophirbetser.netlify.app/post/</loc>
   </url><url>
     <loc>https://ophirbetser.netlify.app/post/my_heb_post/heb_post/</loc>
+  </url><url>
+    <loc>https://ophirbetser.netlify.app/author/%E5%90%B3%E6%81%A9%E9%81%94/</loc>
   </url>
 </urlset>
