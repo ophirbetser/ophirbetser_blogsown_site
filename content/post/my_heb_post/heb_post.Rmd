@@ -9,6 +9,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## R Markdown
 
+![](./avatar.jpg)
+
 שלום, קוראים לי אופיר בצר
 
 אני מנסה לבין איך לתפעל את האתר הזה
