@@ -32,7 +32,6 @@ R
 ראשית יש להוריד אותה.
 הדבר משול ל״ללכת לקנות מצרך מהסופר ולשים אותו במקרר״.
 הדרך הקלאסית לעשות זאת היא בעזרת הפקודה:&lt;/p&gt;
-&lt;p&gt;sdfsdf&lt;/p&gt;
 &lt;div style=&#34;text-align:left;&#34; dir=&#34;ltr&#34;&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# ggplot2 is the name of the package I wants to download
 install.packages(&amp;quot;ggplot2&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
