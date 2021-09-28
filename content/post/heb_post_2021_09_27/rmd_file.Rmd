@@ -4,12 +4,8 @@ date: "2021-09-27T00:00:00Z"
 output: html_document
 thumbnail: "./pie-1.png"
 projects: []
-subtitle: "Welcome \U0001F44B We know that first impressions are important, so we've
-  populated your new site with some initial content to help you get familiar with
-  everything in no time." 
-summary: "Welcome \U0001F44B We know that first impressions are important, so we've
-  populated your new site with some initial content to help you get familiar with
-  everything in no time."
+subtitle: "הבלוג שלי???"
+summary: "שלום"
 tags:
 - Academic
 - 开源
@@ -23,11 +19,13 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 
-# שלום
+### שלום
 
 שלום לכול מי שצופה באתר הזה. קוראים לי אופיר בצר ואני בונה דרך 
 R 
 את האתר הנחמד הזה.
 
   
-מקווה שיהיה כיף ונחמד
+מקווה שיהיה כיף ונחמד.
+
+
