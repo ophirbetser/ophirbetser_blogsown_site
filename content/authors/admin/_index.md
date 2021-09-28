@@ -14,7 +14,7 @@ interests:
 organizations:
 - name: Tel Aviv University
   url: https://english.tau.ac.il/
-role: Researcher in israel MOF
+role: Researcher in Israel's MOF
 social:
 - icon: envelope
   icon_pack: fas
