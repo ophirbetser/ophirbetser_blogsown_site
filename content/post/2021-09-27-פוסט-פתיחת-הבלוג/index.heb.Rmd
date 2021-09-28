@@ -1,0 +1,36 @@
+---
+title: פוסט פתיחת הבלוג
+author: אופיר בצר
+date: '2021-09-27'
+slug: פוסט-פתיחת-הבלוג
+categories: []
+tags: []
+subtitle: 'פוסט היכרות'
+summary: 'פוסט היכרות'
+authors: []
+lastmod: '2021-09-27T14:28:50+03:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+<html dir="rtl">
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+### שלום
+
+שלום לכול מי שצופה באתר הזה. קוראים לי אופיר בצר ואני בונה דרך 
+R 
+את האתר הנחמד הזה.
+
+  
+מקווה שיהיה כיף ונחמד.
+

@@ -136,6 +136,12 @@ The variance of the distribution is $\sigma^{2}$.
 &lt;script src=&#34;https://ophirbetser.netlify.app/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
+&lt;style&gt;
+  .rtl { direction:rtl;}
+&lt;/style&gt;
+&lt;style&gt;
+  .ltr { direction:ltr;}
+&lt;/style&gt;
 &lt;html dir=&#34;rtl&#34;&gt;
 &lt;p&gt;אחד הדברים המשמעותיים ביותר שהופכים שפות קוד פתוח לחזקות ומדהימות
 הוא השימוש בספריות קוד.&lt;/p&gt;
@@ -148,23 +154,21 @@ R
 הדבר משול ל״ללכת לקנות מצרך מהסופר ולשים אותו במקרר״.
 הדרך הקלאסית לעשות זאת היא בעזרת הפקודה:
 &lt;/html&gt;
-&lt;html dir=&#34;ltr&#34;&gt;
-&lt;div dir=&#34;ltr&#34;&gt;
+&lt;div class=&#34;ltr&#34;&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# ggplot2 is the name of the package I wants to download
 install.packages(&amp;quot;ggplot2&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-&lt;/html&gt;
 &lt;p&gt;לאחר הורדת הספריה, יש לטעון אותה.
-בהשמך למשל הסופר, הפעולה הזאת מקבילה ללהוציא מהמקרר את המוצר שאני רוצה לעשות בו שימוש על מנת
-להכין ארוחה טעימה ועשירה.&lt;/p&gt;
+בהמשך למשל הסופר, הפעולה הזאת מקבילה ל״להוציא מהמקרר את המוצר שאני רוצה לעשות בו שימוש על מנת
+להכין ארוחה טעימה ועשירה״.&lt;/p&gt;
 &lt;p&gt;עושים זאת ב
 R
 כך:&lt;/p&gt;
-&lt;div dir=&#34;ltr&#34;&gt;
+&lt;div class=&#34;ltr&#34;&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# ggplot2 is the name of the package I wants to load to my environment
 library(ggplot2)&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-&lt;p&gt;הצורך גם להורקיד וגם לטעון ספריות לפעמיים מרגיז.
+&lt;p&gt;הדרישה גם להוריד וגם לטעון ספריות לפעמיים מרגיזה.
 אתה רוצה לעשות להריץ את הקוד שלך, אבל הוא נשבר, ולאחר בדיקה
 אתה מגלה שזה נובע מכך ששכחת לטעון או להוריד ספריה שדרושה להרצת הסקריפט.&lt;/p&gt;
 &lt;p&gt;דרך סופר קלילה ומגניבה לפתור את חוסר הנוחות הזה היא להשתמש במנהל ספריות.&lt;/p&gt;
@@ -197,9 +201,9 @@ pacman
     
     <item>
       <title>פוסט פתיחת הבלוג</title>
-      <link>https://ophirbetser.netlify.app/post/heb_post_2021_09_27/rmd_file/</link>
+      <link>https://ophirbetser.netlify.app/post/heb_post_2021_09_27/%D7%A4%D7%95%D7%A1%D7%98-%D7%A4%D7%AA%D7%99%D7%97%D7%AA-%D7%94%D7%91%D7%9C%D7%95%D7%92/</link>
       <pubDate>Mon, 27 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>https://ophirbetser.netlify.app/post/heb_post_2021_09_27/rmd_file/</guid>
+      <guid>https://ophirbetser.netlify.app/post/heb_post_2021_09_27/%D7%A4%D7%95%D7%A1%D7%98-%D7%A4%D7%AA%D7%99%D7%97%D7%AA-%D7%94%D7%91%D7%9C%D7%95%D7%92/</guid>
       <description>
 &lt;script src=&#34;https://ophirbetser.netlify.app/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
