@@ -66,3 +66,47 @@
     
   </channel>
 </rss>
+� גם להוריד וגם לטעון ספריות לפעמיים מרגיזה.
+אתה רוצה לעשות להריץ את הקוד שלך, אבל הוא נשבר, ולאחר בדיקה
+אתה מגלה שזה נובע מכך ששכחת לטעון או להוריד ספריה שדרושה להרצת הסקריפט.&lt;/p&gt;
+&lt;p&gt;דרך סופר קלילה ומגניבה לפתור את חוסר הנוחות הזה היא להשתמש במנהל ספריות.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;כיף-גדול-עם-מנהל-ספריות&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;כיף גדול עם מנהל ספריות&lt;/h3&gt;
+&lt;p&gt;pacman
+היא ספריה ב
+R
+שעושה בדיוק את זה.&lt;/p&gt;
+&lt;p&gt;פשוט מורידים אותה פעם אחת&lt;/p&gt;
+&lt;div style=&#34;text-align:left;&#34; dir=&#34;ltr&#34;&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# download pacman
+install.packages(&amp;quot;pacman&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;ולאחר מכך, הפקודה הבאה:&lt;/p&gt;
+&lt;div style=&#34;text-align:left;&#34; dir=&#34;ltr&#34;&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# load with &amp;#39;p_load&amp;#39;
+pacman::p_load(
+  ggplot2,
+  data.table,
+  caret
+)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;תטען את כל הספריות שבתוך הסוגריים,
+ואם יש ספריות שאינן מותקנות בסביבת העבודה שלכם
+pacman
+תדאג להוריד אותן!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;סרטון-הסבר-קצרצר-על-הספריה&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;סרטון הסבר קצרצר על הספריה&lt;/h3&gt;
+&lt;div style=&#34;text-align:center;&#34;&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/WxXwHcfvN3M&#34; frameborder=&#34;0&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;p&gt;תהנו
+:)&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
