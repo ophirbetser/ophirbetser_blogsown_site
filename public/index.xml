@@ -147,10 +147,10 @@ R
 ראשית יש להוריד אותה.
 הדבר משול ל״ללכת לקנות מצרך מהסופר ולשים אותו במקרר״.
 הדרך הקלאסית לעשות זאת היא בעזרת הפקודה:&lt;/p&gt;
-&lt;html dir=&#34;ltr&#34;&gt;
+&lt;div dir=&#34;ltr&#34;&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# ggplot2 is the name of the package I wants to download
 install.packages(&amp;quot;ggplot2&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;/html&gt;
+&lt;/div&gt;
 &lt;p&gt;לאחר הורדת הספריה, יש לטעון אותה.
 בהשמך למשל הסופר, הפעולה הזאת מקבילה ללהוציא מהמקרר את המוצר שאני רוצה לעשות בו שימוש על מנת
 להכין ארוחה טעימה ועשירה.&lt;/p&gt;
@@ -161,6 +161,34 @@ R
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# ggplot2 is the name of the package I wants to load to my environment
 library(ggplot2)&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+&lt;p&gt;הצורך גם להורקיד וגם לטעון ספריות לפעמיים מרגיז.
+אתה רוצה לעשות להריץ את הקוד שלך, אבל הוא נשבר, ולאחר בדיקה
+אתה מגלה שזה נובע מכך ששכחת לטעון או להוריד ספריה שדרושה להרצת הסקריפט.&lt;/p&gt;
+&lt;p&gt;דרך סופר קלילה ומגניבה לפתור את חוסר הנוחות הזה היא להשתמש במנהל ספריות.&lt;/p&gt;
+&lt;p&gt;pacman
+היא ספריה ב
+R
+שעושה בדיוק את זה.&lt;/p&gt;
+&lt;p&gt;פשוט מורידים אותה פעם אחת&lt;/p&gt;
+&lt;div dir=&#34;ltr&#34;&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# download pacman
+install.packages(&amp;quot;pacman&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;ולאחר מכך, הפקודה הבאה:&lt;/p&gt;
+&lt;div dir=&#34;ltr&#34;&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# download pacman
+pacman::p_load(
+  ggplot2,
+  data.table,
+  caret
+)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;תטען את כל הספריות שבתוך הסוגריים,
+ואם יש סיפריות שאינן מותקנות בסביבת העבודה שלכם
+pacman
+תדאג להוריד אותן!&lt;/p&gt;
+&lt;p&gt;תהנו
+:)&lt;/p&gt;
 </description>
     </item>
     
