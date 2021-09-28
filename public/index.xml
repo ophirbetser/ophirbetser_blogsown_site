@@ -130,41 +130,12 @@ The variance of the distribution is $\sigma^{2}$.
     <item>
       <title>פוסט פתיחת הבלוג</title>
       <link>https://ophirbetser.netlify.app/post/heb_post_2021_09_27/rmd_file/</link>
-      <pubDate>Sun, 27 Sep 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 27 Sep 2021 00:00:00 +0000</pubDate>
       <guid>https://ophirbetser.netlify.app/post/heb_post_2021_09_27/rmd_file/</guid>
       <description>
 &lt;script src=&#34;https://ophirbetser.netlify.app/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
-&lt;table style=&#34;width:6%;&#34;&gt;
-&lt;colgroup&gt;
-&lt;col width=&#34;5%&#34; /&gt;
-&lt;/colgroup&gt;
-&lt;tbody&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;title: “פוסט פתיחת הבלוג”
-date: “2020-09-27T00:00:00Z”
-output: html_document&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;image:
-caption: &lt;img src=&#34;https://images.unsplash.com/reserve/Af0sF2OS5S5gatqrKzVP_Silhoutte.jpg?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHBpY3xlbnwwfHwwfHw%3D&amp;amp;ixlib=rb-1.2.1&amp;amp;w=1000&amp;amp;q=80&#34; /&gt;
-focal_point: &#34;&#34;
-placement: 2
-preview_only: false
-projects: []
-subtitle: “Welcome  We know that first impressions are important, so we’ve
-populated your new site with some initial content to help you get familiar with
-everything in no time.”
-summary: “Welcome  We know that first impressions are important, so we’ve
-populated your new site with some initial content to help you get familiar with
-everything in no time.”
-tags:
-- Academic
-- 开源&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
 &lt;html dir=&#34;rtl&#34;&gt;
 &lt;div id=&#34;שלום&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;שלום&lt;/h1&gt;

@@ -1,17 +1,12 @@
 ---
 title: "פוסט פתיחת הבלוג"
-date: "2020-09-27T00:00:00Z"
+date: "2021-09-27T00:00:00Z"
 output: html_document
-
-image:
-  caption: ![](https://images.unsplash.com/reserve/Af0sF2OS5S5gatqrKzVP_Silhoutte.jpg?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHBpY3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80)
-  focal_point: ""
-  placement: 2
-  preview_only: false
+thumbnail: "./pie-1.png"
 projects: []
 subtitle: "Welcome \U0001F44B We know that first impressions are important, so we've
   populated your new site with some initial content to help you get familiar with
-  everything in no time."
+  everything in no time." 
 summary: "Welcome \U0001F44B We know that first impressions are important, so we've
   populated your new site with some initial content to help you get familiar with
   everything in no time."
