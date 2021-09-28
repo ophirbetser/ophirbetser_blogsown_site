@@ -33,7 +33,6 @@ R
 הדבר משול ל״ללכת לקנות מצרך מהסופר ולשים אותו במקרר״.
 הדרך הקלאסית לעשות זאת היא בעזרת הפקודה:
 
-sdfsdf
 
 <div style="text-align:left;" dir="ltr">
 ```{r eval=FALSE, include=TRUE}
