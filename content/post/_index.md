@@ -3,6 +3,10 @@ cms_exclude: true
 header:
   caption: ""
   image: ""
-title: Posts
+title: פוסטים
 view: 2
 ---
+
+<html dir="rtl">
+
+קריאה נעימה :)
