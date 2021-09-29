@@ -128,6 +128,186 @@ The variance of the distribution is $\sigma^{2}$.
     </item>
     
     <item>
+      <title>היכרות עם lubridate</title>
+      <link>https://ophirbetser.netlify.app/post/lubridate/</link>
+      <pubDate>Wed, 29 Sep 2021 00:00:00 +0000</pubDate>
+      <guid>https://ophirbetser.netlify.app/post/lubridate/</guid>
+      <description>
+&lt;script src=&#34;https://ophirbetser.netlify.app/post/lubridate/index.en_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;html dir=&#34;rtl&#34;&gt;
+&lt;div id=&#34;תאריך-כסוג-של-משתנה&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;תאריך כסוג של משתנה&lt;/h3&gt;
+&lt;p&gt;סוגי המשתנים שהכי שכיח להשתמש בהם ב
+R
+הם מספרים, מחרונות, ומשתנים בוליאנים
+(משתנים שמקבלים ערך של או אמת או שקר)
+.&lt;/p&gt;
+&lt;p&gt;על כל סוג משתנה ניתן לבצע פעולות,
+נניח אפשר לחבר 2 מספרים&lt;/p&gt;
+&lt;div style=&#34;text-align:left;&#34; dir=&#34;ltr&#34;&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;88 + 54&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 142&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;או להפוך את כל האותיות במחרוזת לאותיות ראשיות&lt;/p&gt;
+&lt;div style=&#34;text-align:left;&#34; dir=&#34;ltr&#34;&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;my_name &amp;lt;- &amp;#39;inigo montoya&amp;#39;
+print(toupper(my_name))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;INIGO MONTOYA&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;בניתוח נתונים אנחנו הרבה פעמים מוצאים את עצמנו עובדים עם דאטה שיש בו משמעות לזמן,
+והוא מכיל משתנה מסוג תאריך.&lt;/p&gt;
+&lt;p&gt;עבודה עם תאריכים ב
+R
+יכולה להיות מאוד מתסכלת וקשה,
+כי הפקודות הבסיסיות של השפה אינן כתובות באופן ידידותי למשתמש.&lt;/p&gt;
+&lt;p&gt;אבל אל דאגה!&lt;/p&gt;
+&lt;p&gt;יש ספריה שתעשה לכם את החיים הרבה יותר קלים ופשוטים.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;lubridate&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;lubridate&lt;/h3&gt;
+&lt;p&gt;lubridate
+היא ספריה שהמטרה שלה היא להפוך את העבודה עם משתני תאריכים לקלה.&lt;/p&gt;
+&lt;p&gt;בשימושים העיקרים שלי בה הם:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;שינוי וקטורים לפורמט תאריך (היא יודעת לעבוד אינספור פורמטים שונים)&lt;/li&gt;
+&lt;li&gt;חילוץ נתון מסוים, כמו היום בשבוע מתוך וקטור תאריכים&lt;/li&gt;
+&lt;li&gt;חישובים של הפרשי זמנים&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div id=&#34;שימוש-ב-chear-sheets&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;שימוש ב Chear Sheets&lt;/h3&gt;
+&lt;p&gt;לחלר גדול מהספריות בכי פופולאריות ב
+R
+ניתן למצוא פוסטרים שימושים
+שמסבירים איך להשתמש בפונקציות של הספריה באופן נגיש ואינטואיטיבי.&lt;/p&gt;
+&lt;p&gt;הכינוי של הפוסטרים האלו הוא
+“Cheat Sheets”
+ואפשר למצוא אותם ישר מתוך
+Rstudio
+על ידי לחיצה על&lt;/p&gt;
+&lt;div style=&#34;text-align:center;&#34; dir=&#34;ltr&#34;&gt;
+&lt;p&gt;Help -&amp;gt; Cheat sheets -&amp;gt; Browse Cheets Sheets…&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;index.en_insertimage_1.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;לאחר הלחיצה תועברו לקישור &lt;a href=&#34;https://www.rstudio.com/resources/cheatsheets/&#34;&gt;https://www.rstudio.com/resources/cheatsheets/&lt;/a&gt;
+שבין השאר, ניתן למצוא בו קובץ הסברים על lubrudate&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;index.en_insertimage_2.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;אני ממליץ להציץ בקובץ, ובקבצים מקבילים של ספריות אחרות. ניתן ללמוד מהם הרבה.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;שימוש-בספריה&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;שימוש בספריה&lt;/h3&gt;
+&lt;p&gt;אני הדגים איך לבצע את 3 המשימות הבסיסיות שיש לנו בעבודה עם תאריכים&lt;/p&gt;
+&lt;p&gt;אטען את הספריה עם pacman,
+המשמשת כמנהל הספריות ב
+R.&lt;/p&gt;
+&lt;p&gt;אם אתם לא מכירים אותה, תקראו את
+&lt;a href=&#34;https://ophirbetser.netlify.app/post/איך-לטעון-ספריות-בקלות-ב-r/&#34;&gt;הפוסט שבו אני מסביר עליה&lt;/a&gt;&lt;/p&gt;
+&lt;div style=&#34;text-align:left;&#34; dir=&#34;ltr&#34;&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pacman::p_load(lubridate)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;התאמת-פורמט-תאריך&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;1 התאמת פורמט תאריך&lt;/h4&gt;
+&lt;p&gt;לפני שאנחנו מנתחים תאריכים, ראשית יש לוודא שהפורמט של המשתנה הוא אכן פורמט של תאריך,
+ולא חלילה מחרוזת.&lt;/p&gt;
+&lt;p&gt;ראשית, אצור וקטורי מחרוזות שמכילים ״תאריכים״ במספר פורמטים שונים&lt;/p&gt;
+&lt;div style=&#34;text-align:left;&#34; dir=&#34;ltr&#34;&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;date_format_1 &amp;lt;- c(&amp;quot;2020-04-29&amp;quot;, &amp;quot;2020-09-06&amp;quot;, &amp;quot;2020-09-30&amp;quot;)
+date_format_2 &amp;lt;- c(&amp;quot;2020/04/29&amp;quot;, &amp;quot;2020/09/06&amp;quot;, &amp;quot;2020/09/30&amp;quot;)
+date_format_3 &amp;lt;- c(&amp;quot;29.4.2020&amp;quot;, &amp;quot;6.9.2020&amp;quot;, &amp;quot;30.9.2020&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;ואראה שהסוג משתנה שהם עכשיו הוא מחרוזת ולא תאריך&lt;/p&gt;
+&lt;div style=&#34;text-align:left;&#34; dir=&#34;ltr&#34;&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;print(class(date_format_1))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;character&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;print(class(date_format_2))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;character&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;print(class(date_format_3))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;character&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;הוקטור הראשון הוא במבנה ש
+R
+רוצה שתאריך יהיה בו.
+שנה, חודש ואז יום.&lt;/p&gt;
+&lt;p&gt;כדי לשנות אותו למשתנה מסוג תאריך נשתמש בפונקציה&lt;/p&gt;
+&lt;div style=&#34;text-align:left;&#34; dir=&#34;ltr&#34;&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;date_format_1 &amp;lt;- as_date(date_format_1)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+ונוודא שאכן המשתנה שונה:
+&lt;div style=&#34;text-align:left;&#34; dir=&#34;ltr&#34;&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;print(class(date_format_1))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;Date&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;מגניב.&lt;/p&gt;
+&lt;p&gt;שתי הוקטורים הנוספים הם תאריכים בפורמט קצת אחר.&lt;/p&gt;
+&lt;p&gt;הדרך לשנות להמיר אותם לתאריכים ב
+lubridate
+נראת ככה:&lt;/p&gt;
+&lt;div style=&#34;text-align:left;&#34; dir=&#34;ltr&#34;&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;date_format_2 &amp;lt;- ymd(date_format_2)
+date_format_3 &amp;lt;- dmy(date_format_3)
+
+print(date_format_2)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;2020-04-29&amp;quot; &amp;quot;2020-09-06&amp;quot; &amp;quot;2020-09-30&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;print(date_format_3)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;2020-04-29&amp;quot; &amp;quot;2020-09-06&amp;quot; &amp;quot;2020-09-30&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;ניתן לראות שאכן המשימה בוצאה, פשוט על ידי התאמת הפונקציה למשתנה התאריך במחרוזת שקיבלנו,
+כאשר
+y
+צריך להיות במקום שהחלק של השנה נצבמא בתאריך שלנו
+m
+צריך להיות במקום שהחלק של החודש נמצא בתאריך שלנו,
+ו
+d
+במקום שבו מופיע היום.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;חילוץ-מידע-מתאריכים&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;2 חילוץ מידע מתאריכים&lt;/h4&gt;
+&lt;p&gt;מעולה. הוקטורים שלנו עכשיו משתני תאריך, ואנחנו יכולים להפעיל המון פונקציות עליהם!&lt;/p&gt;
+&lt;p&gt;נניח שאני רוצה לדעת מאיזה יום בשבוע, או מאיזה תאריך בשנה התאריך שלי לקוח.&lt;/p&gt;
+&lt;p&gt;הדרך של
+lubridate
+לעשות את זה נראת ככה:&lt;/p&gt;
+&lt;div style=&#34;text-align:left;&#34; dir=&#34;ltr&#34;&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;wday(date_format_1)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 4 1 4&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;week(date_format_1)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 18 36 40&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;ובאופן דומה ניתן להוציא כל שביב מידע מהתאריכים שלכם
+דוגמאות רבות לאיך לעשות זאת ניתן למצוא ב
+Cheat Sheet
+של הספריה.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;מרחק-בין-תאריכים&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;3 מרחק בין תאריכים&lt;/h4&gt;
+&lt;p&gt;מעניין לדעת, מה היה התאריך לפני 50 יום, לכל אחד מהתאריכים בוקטור שלי&lt;/p&gt;
+&lt;div style=&#34;text-align:left;&#34; dir=&#34;ltr&#34;&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;date_format_1 - days(50)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;2020-03-10&amp;quot; &amp;quot;2020-07-18&amp;quot; &amp;quot;2020-08-11&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;קליל ופשוט, הרבה יותר טוב מהדרך של
+base-r&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;סרטון-הסבר-על-הספריה&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;סרטון הסבר על הספריה&lt;/h3&gt;
+&lt;p&gt;בסרטון הזה שהועבר כחלק
+״כלכלה בעולם הביג דאטה״ - קורס בפקולטה לכלכלה של אוניברסיטת תל אביב
+אני מסביר מעט יותר בפירוט על הספריה ועל עבודה עם תאריכים.&lt;/p&gt;
+&lt;div style=&#34;text-align:center;&#34;&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/LehJz9s2Y_A&#34; frameborder=&#34;0&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;p&gt;תהנו
+:)&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>איך לטעון ספריות בקלות ב R</title>
       <link>https://ophirbetser.netlify.app/post/%D7%90%D7%99%D7%9A-%D7%9C%D7%98%D7%A2%D7%95%D7%9F-%D7%A1%D7%A4%D7%A8%D7%99%D7%95%D7%AA-%D7%91%D7%A7%D7%9C%D7%95%D7%AA-%D7%91-r/</link>
       <pubDate>Tue, 28 Sep 2021 00:00:00 +0000</pubDate>
@@ -202,7 +382,7 @@ pacman
 &lt;div id=&#34;סרטון-הסבר-קצרצר-על-הספריה&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;סרטון הסבר קצרצר על הספריה&lt;/h3&gt;
 &lt;div style=&#34;text-align:center;&#34;&gt;
-&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/WxXwHcfvN3M&#34; frameborder=&#34;0&#34; allowfullscreen&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/LehJz9s2Y_A&#34; frameborder=&#34;0&#34; allowfullscreen&gt;
 &lt;/iframe&gt;
 &lt;/div&gt;
 &lt;p&gt;תהנו
