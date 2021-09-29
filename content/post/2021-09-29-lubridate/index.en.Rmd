@@ -7,7 +7,7 @@ categories: []
 tags: []
 subtitle: 'מדריך קצר לעבודה נכונה יותר עם תאריכים ב R'
 summary: 'מדריך קצר לעבודה נכונה יותר עם תאריכים ב R'
-authors: []
+authors: [ophir betser]
 lastmod: '2021-09-29T23:08:50+03:00'
 featured: no
 image:
