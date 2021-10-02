@@ -5,12 +5,58 @@
     <link>https://ophirbetser.netlify.app/post/</link>
       <atom:link href="https://ophirbetser.netlify.app/post/index.xml" rel="self" type="application/rss+xml" />
     <description>פוסטים</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 29 Sep 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 02 Oct 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://ophirbetser.netlify.app/post/featured.jpeg</url>
       <title>פוסטים</title>
       <link>https://ophirbetser.netlify.app/post/</link>
     </image>
+    
+    <item>
+      <title>ויזואליזציה של משפט הגבול המרכזי</title>
+      <link>https://ophirbetser.netlify.app/post/clt/</link>
+      <pubDate>Sat, 02 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>https://ophirbetser.netlify.app/post/clt/</guid>
+      <description>
+&lt;script src=&#34;https://ophirbetser.netlify.app/post/clt/index.en_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;html dir=&#34;rtl&#34;&gt;
+&lt;p&gt;שלום לכול מי שקורא את הפוסט :)&lt;/p&gt;
+&lt;p&gt;אני רוצה לספר למי שלא מכיר על הספריה
+shiny.&lt;/p&gt;
+&lt;p&gt;shiny
+היא ספריה
+שמאפשרת לבנות אפליקציות אינטרקטיביות
+דרך
+R
+.&lt;/p&gt;
+&lt;p&gt;שימוש בכלים אינטרקטיבים כחלק מהצגת העבודה שלנו עם נתונים יכול ממש לשדרג את העניין בניתוח הנתונים שלנו ובהבנה של המשמעות שלו.&lt;/p&gt;
+&lt;p&gt;הצגה של תוצאות הניתוח, תוך בניית סיפור מעניין והגיוני היא חלק מאוד חשוב בעבודה של מדען נתונים או אנליסט. האם עץ שנופל באמצע אי מבודד אכן משמיע רעש? האם גרף שאתה היחיד בעולם שראה אכן סורטט?&lt;/p&gt;
+&lt;p&gt;בשל העניין הזה שליטה בכליי ויזאליזיה, סטורי-טליג ובניית אפליקציות יכולה לחזק מאוד הרושם שהעבודה שלכם ישאיר על הצופים בו.&lt;/p&gt;
+&lt;p&gt;שימוש נוסף בכלים האלה יכול להיות עזר כאשר נושא חדש נלמד.&lt;/p&gt;
+&lt;p&gt;אני מצרץ קישור לפוסט הזה לדוגמא ממש כזאת, שבה בניתי אפליציה פשוטה אשר מדגימה את תוצאות משפט הגבול המרכזי.&lt;/p&gt;
+&lt;p&gt;המסקנה של המשפט היא שממוצעים התפלגויות מתוך מרחב דגימה כלשהוא (הכלליות היא הכוח של המשפט)
+מתפלגים באופן גבולי נורמלית.&lt;/p&gt;
+&lt;p&gt;כלומר, אם אני אגריל
+n
+הגרלות שונות
+בנות
+m
+תפציות מתוך התפלגות אחידה,
+כל הגרלה בפני עצמה תתפלג באופן גבולי אחיד,
+אך הממוצעים של ההגרלות היתפלגו באופן גבולי
+(כש n שואף לאינסוף)
+נורמלית.&lt;/p&gt;
+&lt;p&gt;מוזמנים לשחק באפליקציה, לקבל הרגשה של הבנה עמוקה יותר של מספקות המשפט, כי אין כמו לראות הפשטנ של תוצאות של נושאים מופשטים:&lt;/p&gt;
+&lt;div style=&#34;text-align:center;&#34; dir=&#34;ltr&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://ophir-betser.shinyapps.io/clt_app/?_ga=2.74569106.1091192915.1632655554-1160489566.1631561296&#34;&gt;clt app&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;בהמשך אני אכתוב פןסט שבו אסביר על הקוד, ועל איך בונים אפליקציה בעזרת
+shiny.&lt;/p&gt;
+&lt;p&gt;אני חושב שאם עבור כל נושא קצת מסובך תהיה לסטודנטים גישה לכלים בסגנון הזה, חווית הלימודים תהיה יותר מהנה, וקצב הלימוד יוכל להיות יותר גבוה.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>היכרות עם lubridate</title>
