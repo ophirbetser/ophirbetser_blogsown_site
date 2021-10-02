@@ -1,0 +1,23 @@
+---
+title: יצירת גרפים בקלות
+author: ophir betser
+date: '2021-10-02T16:04:47+03:00'
+slug: יצירת-גרפים-בקלות
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-10-02T16:04:47+03:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+<html dir="rtl">
+
+
+היוש כפרה על כולם פה
