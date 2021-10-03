@@ -20,4 +20,30 @@ projects: []
 <html dir="rtl">
 
 
-היוש כפרה על כולם פה
+ggplot2
+היא כנראה הספריה הפופאולרית ביותר בשפת
+R
+.
+
+היא מאפשרת ליצור גרפים יפים באופן שנותן למשתמש חופש רב בבחירת העיצוב ואופן הגצת הנתונים.
+
+אני ממליץ בחום לכל משתמש 
+R
+ללמוד לשלוט בספריה,
+אך להגיע לרמה גבוהה בה יכול לקחת זמן רב.
+
+
+<div dir="ltr"> [esquisse](https://cran.r-project.org/web/packages/esquisse/vignettes/get-started.html) </div> היא ספריה משלימה ל
+ggplot2
+שיכולה להקל מאוד על יצירת גרפים למשתמשים חדשים,
+ולהאיץ את קצת הלמידה של הספריה.
+
+מוזמנים לצפות בסרטון הקצר שהכנתי על
+esquisse
+כדי ללמוד איך להשתמש בה
+
+<div style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7-5G8I7Cpsw" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
