@@ -40,7 +40,7 @@ R
 <div dir="ltr"> [esquisse](https://cran.r-project.org/web/packages/esquisse/vignettes/get-started.html) </div> היא ספריה משלימה ל
 ggplot2
 שיכולה להקל מאוד על יצירת גרפים למשתמשים חדשים,
-ולהאיץ את קצת הלמידה של הספריה.
+ולהאיץ את קצב הלמידה של הספריה.
 
 מוזמנים לצפות בסרטון הקצר שהכנתי על
 esquisse
