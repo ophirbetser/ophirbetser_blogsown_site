@@ -17,6 +17,10 @@ image:
 projects: []
 ---
 
+```{css echo=FALSE}
+h1 { text-align:center; color:#296993;}
+```
+
 <div style="text-align:right;" dir="rtl">
 
 ggplot2
