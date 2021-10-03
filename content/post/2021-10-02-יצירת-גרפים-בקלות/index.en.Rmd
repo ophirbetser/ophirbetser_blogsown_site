@@ -17,8 +17,7 @@ image:
 projects: []
 ---
 
-<html dir="rtl">
-
+<div style="text-align:right;" dir="rtl">
 
 ggplot2
 היא כנראה הספריה הפופאולרית ביותר בשפת
@@ -31,6 +30,7 @@ R
 R
 ללמוד לשלוט בספריה,
 אך להגיע לרמה גבוהה בה יכול לקחת זמן רב.
+
 
 
 <div dir="ltr"> [esquisse](https://cran.r-project.org/web/packages/esquisse/vignettes/get-started.html) </div> היא ספריה משלימה ל
@@ -47,3 +47,4 @@ esquisse
 </div>
 
 
+</div>
