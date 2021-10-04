@@ -1,0 +1,136 @@
+---
+title: gganimate
+author: ophir betser
+date: '2021-10-04'
+slug: gganimate
+categories: []
+tags: []
+subtitle: 'יצירת אנימציות מהדאטה שלכם'
+summary: 'יצירת אנימציות מהדאטה שלכם'
+authors: []
+lastmod: '2021-10-04T18:32:47+03:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{css echo=FALSE}
+h1 { text-align:center; color:#296993;}
+p { text-align:right;}
+```
+
+
+<div style="text-align:right;" dir="rtl">
+
+שלום, אני משתף כמה דוגמאות של ספריה בשם
+gganimate
+שמאפשרת להפוך גרפי 
+ggplot
+לאנימציות.
+
+את הדוגמא לאנימציה הראשונה מצאתי בסרטון היוטיוב [הזה](https://www.youtube.com/watch?v=SnCi0s0e4Io&ab_channel=dataslice)
+</div>
+
+
+
+
+```{r cache=TRUE}
+options(scipen=999) # Disables scientific notation          
+options(digits=6)   # Limits the number of digits printed       
+
+
+pacman::p_load(
+          pacman, 
+          gganimate,
+          ggthemes,
+          gapminder,
+          data.table,
+          tidyverse,
+          patchwork,
+          forcats, 
+          ggeasy,
+          visdat,
+          openxlsx,
+          DT, 
+          shiny, 
+          esquisse)
+
+
+```
+
+
+
+```{r cache=TRUE}
+graph1 = gapminder %>%
+  ggplot(aes(x=gdpPercap, y=lifeExp, color=continent, size=pop)) +
+  geom_point(alpha = 0.7, stroke = 0) +
+  theme_fivethirtyeight() +
+  scale_size(range=c(2,12), guide="none") +
+  scale_x_log10() +
+  labs(title = "Life Expectancy vs GDP Per Capita by Country",
+       x = "Income per person (GDP / capita)",
+       y = "Life expectancy (years)",
+       color = "Continent",
+       caption = "Source: Gapminder") +
+  theme(axis.title = element_text(),
+        text = element_text(),
+        legend.text=element_text(size=10)) +
+  scale_color_brewer(palette = "Set2")
+
+graph1.animation = graph1 +
+  transition_time(year) +
+  labs(subtitle = "Year: {frame_time}") +
+  shadow_wake(wake_length = 0.1)
+
+graph1.animation
+```
+
+```{r cache=TRUE}
+options(scipen=999) # Disables scientific notation          
+data <- gapminder %>% as.data.table()
+
+data <- 
+data[,
+    .(sum_pop = sum(pop)),
+    by = .(continent, year)]
+
+data$continent <- 
+  fct_reorder(
+    data$continent,
+    -data$sum_pop,
+    max
+  )
+
+data %>% 
+  ggplot() +
+  aes(
+    x = continent,
+    y = sum_pop,
+    fill = continent
+  ) +
+  geom_bar(stat = "identity") +
+  theme_classic() +
+  scale_y_continuous(
+    expand = c(0,0)
+  ) +
+  easy_remove_y_axis(what = c("ticks", "line")) +
+  theme(
+    legend.position = "top"
+  ) +
+  transition_time(year) +
+  labs(
+    subtitle = "Year: {frame_time}",
+    fill = "",
+    title = "How Many Human in each Continent?",
+    x = "",
+    y = ""
+    )
+```
+
+

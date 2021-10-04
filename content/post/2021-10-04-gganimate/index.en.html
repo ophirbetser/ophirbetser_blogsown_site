@@ -1,0 +1,120 @@
+---
+title: gganimate
+author: ophir betser
+date: '2021-10-04'
+slug: gganimate
+categories: []
+tags: []
+subtitle: 'יצירת אנימציות מהדאטה שלכם'
+summary: 'יצירת אנימציות מהדאטה שלכם'
+authors: []
+lastmod: '2021-10-04T18:32:47+03:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+editor_options: 
+  chunk_output_type: console
+---
+
+<script src="{{< blogdown/postref >}}index.en_files/header-attrs/header-attrs.js"></script>
+
+
+<style type="text/css">
+h1 { text-align:center; color:#296993;}
+p { text-align:right;}
+</style>
+<div style="text-align:right;" dir="rtl">
+<p>שלום, אני משתף כמה דוגמאות של ספריה בשם
+gganimate
+שמאפשרת להפוך גרפי
+ggplot
+לאנימציות.</p>
+<p>את הדוגמא לאנימציה הראשונה מצאתי בסרטון היוטיוב <a href="https://www.youtube.com/watch?v=SnCi0s0e4Io&amp;ab_channel=dataslice">הזה</a></p>
+</div>
+<pre class="r"><code>options(scipen=999) # Disables scientific notation          
+options(digits=6)   # Limits the number of digits printed       
+
+
+pacman::p_load(
+          pacman, 
+          gganimate,
+          ggthemes,
+          gapminder,
+          data.table,
+          tidyverse,
+          patchwork,
+          forcats, 
+          ggeasy,
+          visdat,
+          openxlsx,
+          DT, 
+          shiny, 
+          esquisse)</code></pre>
+<pre class="r"><code>graph1 = gapminder %&gt;%
+  ggplot(aes(x=gdpPercap, y=lifeExp, color=continent, size=pop)) +
+  geom_point(alpha = 0.7, stroke = 0) +
+  theme_fivethirtyeight() +
+  scale_size(range=c(2,12), guide=&quot;none&quot;) +
+  scale_x_log10() +
+  labs(title = &quot;Life Expectancy vs GDP Per Capita by Country&quot;,
+       x = &quot;Income per person (GDP / capita)&quot;,
+       y = &quot;Life expectancy (years)&quot;,
+       color = &quot;Continent&quot;,
+       caption = &quot;Source: Gapminder&quot;) +
+  theme(axis.title = element_text(),
+        text = element_text(),
+        legend.text=element_text(size=10)) +
+  scale_color_brewer(palette = &quot;Set2&quot;)
+
+graph1.animation = graph1 +
+  transition_time(year) +
+  labs(subtitle = &quot;Year: {frame_time}&quot;) +
+  shadow_wake(wake_length = 0.1)
+
+graph1.animation</code></pre>
+<p><img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-3-1.gif" /><!-- --></p>
+<pre class="r"><code>options(scipen=999) # Disables scientific notation          
+data &lt;- gapminder %&gt;% as.data.table()
+
+data &lt;- 
+data[,
+    .(sum_pop = sum(pop)),
+    by = .(continent, year)]</code></pre>
+<pre><code>## Warning in gsum(pop): The sum of an integer column for a group was more
+## than type &#39;integer&#39; can hold so the result has been coerced to &#39;numeric&#39;
+## automatically for convenience.</code></pre>
+<pre class="r"><code>data$continent &lt;- 
+  fct_reorder(
+    data$continent,
+    -data$sum_pop,
+    max
+  )
+
+data %&gt;% 
+  ggplot() +
+  aes(
+    x = continent,
+    y = sum_pop,
+    fill = continent
+  ) +
+  geom_bar(stat = &quot;identity&quot;) +
+  theme_classic() +
+  scale_y_continuous(
+    expand = c(0,0)
+  ) +
+  easy_remove_y_axis(what = c(&quot;ticks&quot;, &quot;line&quot;)) +
+  theme(
+    legend.position = &quot;top&quot;
+  ) +
+  transition_time(year) +
+  labs(
+    subtitle = &quot;Year: {frame_time}&quot;,
+    fill = &quot;&quot;,
+    title = &quot;How Many Human in each Continent?&quot;,
+    x = &quot;&quot;,
+    y = &quot;&quot;
+    )</code></pre>
+<p><img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-4-1.gif" /><!-- --></p>

@@ -128,6 +128,114 @@ The variance of the distribution is $\sigma^{2}$.
     </item>
     
     <item>
+      <title>gganimate</title>
+      <link>https://ophirbetser.netlify.app/post/gganimate/</link>
+      <pubDate>Mon, 04 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>https://ophirbetser.netlify.app/post/gganimate/</guid>
+      <description>
+&lt;script src=&#34;https://ophirbetser.netlify.app/post/gganimate/index.en_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;style type=&#34;text/css&#34;&gt;
+h1 { text-align:center; color:#296993;}
+p { text-align:right;}
+&lt;/style&gt;
+&lt;div style=&#34;text-align:right;&#34; dir=&#34;rtl&#34;&gt;
+&lt;p&gt;שלום, אני משתף כמה דוגמאות של ספריה בשם
+gganimate
+שמאפשרת להפוך גרפי
+ggplot
+לאנימציות.&lt;/p&gt;
+&lt;p&gt;את הדוגמא לאנימציה הראשונה מצאתי בסרטון היוטיוב &lt;a href=&#34;https://www.youtube.com/watch?v=SnCi0s0e4Io&amp;amp;ab_channel=dataslice&#34;&gt;הזה&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;options(scipen=999) # Disables scientific notation          
+options(digits=6)   # Limits the number of digits printed       
+
+
+pacman::p_load(
+          pacman, 
+          gganimate,
+          ggthemes,
+          gapminder,
+          data.table,
+          tidyverse,
+          patchwork,
+          forcats, 
+          ggeasy,
+          visdat,
+          openxlsx,
+          DT, 
+          shiny, 
+          esquisse)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;graph1 = gapminder %&amp;gt;%
+  ggplot(aes(x=gdpPercap, y=lifeExp, color=continent, size=pop)) +
+  geom_point(alpha = 0.7, stroke = 0) +
+  theme_fivethirtyeight() +
+  scale_size(range=c(2,12), guide=&amp;quot;none&amp;quot;) +
+  scale_x_log10() +
+  labs(title = &amp;quot;Life Expectancy vs GDP Per Capita by Country&amp;quot;,
+       x = &amp;quot;Income per person (GDP / capita)&amp;quot;,
+       y = &amp;quot;Life expectancy (years)&amp;quot;,
+       color = &amp;quot;Continent&amp;quot;,
+       caption = &amp;quot;Source: Gapminder&amp;quot;) +
+  theme(axis.title = element_text(),
+        text = element_text(),
+        legend.text=element_text(size=10)) +
+  scale_color_brewer(palette = &amp;quot;Set2&amp;quot;)
+
+graph1.animation = graph1 +
+  transition_time(year) +
+  labs(subtitle = &amp;quot;Year: {frame_time}&amp;quot;) +
+  shadow_wake(wake_length = 0.1)
+
+graph1.animation&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://ophirbetser.netlify.app/post/gganimate/index.en_files/figure-html/unnamed-chunk-3-1.gif&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;options(scipen=999) # Disables scientific notation          
+data &amp;lt;- gapminder %&amp;gt;% as.data.table()
+
+data &amp;lt;- 
+data[,
+    .(sum_pop = sum(pop)),
+    by = .(continent, year)]&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning in gsum(pop): The sum of an integer column for a group was more
+## than type &amp;#39;integer&amp;#39; can hold so the result has been coerced to &amp;#39;numeric&amp;#39;
+## automatically for convenience.&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data$continent &amp;lt;- 
+  fct_reorder(
+    data$continent,
+    -data$sum_pop,
+    max
+  )
+
+data %&amp;gt;% 
+  ggplot() +
+  aes(
+    x = continent,
+    y = sum_pop,
+    fill = continent
+  ) +
+  geom_bar(stat = &amp;quot;identity&amp;quot;) +
+  theme_classic() +
+  scale_y_continuous(
+    expand = c(0,0)
+  ) +
+  easy_remove_y_axis(what = c(&amp;quot;ticks&amp;quot;, &amp;quot;line&amp;quot;)) +
+  theme(
+    legend.position = &amp;quot;top&amp;quot;
+  ) +
+  transition_time(year) +
+  labs(
+    subtitle = &amp;quot;Year: {frame_time}&amp;quot;,
+    fill = &amp;quot;&amp;quot;,
+    title = &amp;quot;How Many Human in each Continent?&amp;quot;,
+    x = &amp;quot;&amp;quot;,
+    y = &amp;quot;&amp;quot;
+    )&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://ophirbetser.netlify.app/post/gganimate/index.en_files/figure-html/unnamed-chunk-4-1.gif&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>יצירת גרפים בקלות</title>
       <link>https://ophirbetser.netlify.app/post/%D7%99%D7%A6%D7%99%D7%A8%D7%AA-%D7%92%D7%A8%D7%A4%D7%99%D7%9D-%D7%91%D7%A7%D7%9C%D7%95%D7%AA/</link>
       <pubDate>Sat, 02 Oct 2021 16:04:47 +0300</pubDate>
