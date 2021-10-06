@@ -782,7 +782,7 @@ pacman::p_load(
           data.table,
           tidyverse,
           patchwork,
-          forcats, 
+          forcats,
           ggeasy,
           visdat,
           openxlsx,
@@ -829,6 +829,7 @@ data[,
     max
   )
 
+p &lt;- 
 data %&gt;% 
   ggplot() +
   aes(
@@ -852,7 +853,9 @@ data %&gt;%
     title = &quot;How Many Human in each Continent?&quot;,
     x = &quot;&quot;,
     y = &quot;&quot;
-    )</code></pre>
+    )
+
+animate(p, end_pause = 20)</code></pre>
 <p><img src="https://ophirbetser.netlify.app/post/gganimate/index.en_files/figure-html/unnamed-chunk-4-1.gif" /><!-- --></p>
 
     </div>

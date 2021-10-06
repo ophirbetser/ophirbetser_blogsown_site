@@ -107,6 +107,7 @@ data$continent <-
     max
   )
 
+p <- 
 data %>% 
   ggplot() +
   aes(
@@ -131,6 +132,8 @@ data %>%
     x = "",
     y = ""
     )
+
+animate(p, end_pause = 20)
 ```
 
 
