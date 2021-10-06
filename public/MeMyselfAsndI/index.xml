@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>פוסטים | Ophir Betser</title>
+    <link>https://ophirbetser.netlify.app/memyselfasndi/</link>
+      <atom:link href="https://ophirbetser.netlify.app/memyselfasndi/index.xml" rel="self" type="application/rss+xml" />
+    <description>פוסטים</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 04 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://ophirbetser.netlify.app/memyselfasndi/featured.jpeg</url>
+      <title>פוסטים</title>
+      <link>https://ophirbetser.netlify.app/memyselfasndi/</link>
+    </image>
+    
+    <item>
+      <title>gganimate</title>
+      <link>https://ophirbetser.netlify.app/memyselfasndi/gganimate/</link>
+      <pubDate>Mon, 04 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>https://ophirbetser.netlify.app/memyselfasndi/gganimate/</guid>
+      <description>
+&lt;script src=&#34;https://ophirbetser.netlify.app/memyselfasndi/gganimate/index.en_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;style type=&#34;text/css&#34;&gt;
+h1 { text-align:center; color:#296993;}
+p { text-align:right;}
+&lt;/style&gt;
+&lt;div style=&#34;text-align:right;&#34; dir=&#34;rtl&#34;&gt;
+&lt;p&gt;שלום, אני משתף כמה דוגמאות של ספריה בשם
+gganimate
+שמאפשרת להפוך גרפי
+ggplot
+לאנימציות.&lt;/p&gt;
+&lt;p&gt;את הדוגמא לאנימציה הראשונה מצאתי בסרטון היוטיוב &lt;a href=&#34;https://www.youtube.com/watch?v=SnCi0s0e4Io&amp;amp;ab_channel=dataslice&#34;&gt;הזה&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;options(scipen=999) # Disables scientific notation          
+options(digits=6)   # Limits the number of digits printed       
+
+
+pacman::p_load(
+          pacman, 
+          gganimate,
+          ggthemes,
+          gapminder,
+          data.table,
+          tidyverse,
+          patchwork,
+          forcats,
+          ggeasy,
+          visdat,
+          openxlsx,
+          DT, 
+          shiny, 
+          esquisse)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;graph1 = gapminder %&amp;gt;%
+  ggplot(aes(x=gdpPercap, y=lifeExp, color=continent, size=pop)) +
+  geom_point(alpha = 0.7, stroke = 0) +
+  theme_fivethirtyeight() +
+  scale_size(range=c(2,12), guide=&amp;quot;none&amp;quot;) +
+  scale_x_log10() +
+  labs(title = &amp;quot;Life Expectancy vs GDP Per Capita by Country&amp;quot;,
+       x = &amp;quot;Income per person (GDP / capita)&amp;quot;,
+       y = &amp;quot;Life expectancy (years)&amp;quot;,
+       color = &amp;quot;Continent&amp;quot;,
+       caption = &amp;quot;Source: Gapminder&amp;quot;) +
+  theme(axis.title = element_text(),
+        text = element_text(),
+        legend.text=element_text(size=10)) +
+  scale_color_brewer(palette = &amp;quot;Set2&amp;quot;)
+
+graph1.animation = graph1 +
+  transition_time(year) +
+  labs(subtitle = &amp;quot;Year: {frame_time}&amp;quot;) +
+  shadow_wake(wake_length = 0.1)
+
+graph1.animation&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://ophirbetser.netlify.app/memyselfasndi/gganimate/index.en_files/figure-html/unnamed-chunk-3-1.gif&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;options(scipen=999) # Disables scientific notation          
+data &amp;lt;- gapminder %&amp;gt;% as.data.table()
+
+data &amp;lt;- 
+data[,
+    .(sum_pop = sum(pop)),
+    by = .(continent, year)]&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning in gsum(pop): The sum of an integer column for a group was more
+## than type &amp;#39;integer&amp;#39; can hold so the result has been coerced to &amp;#39;numeric&amp;#39;
+## automatically for convenience.&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data$continent &amp;lt;- 
+  fct_reorder(
+    data$continent,
+    -data$sum_pop,
+    max
+  )
+
+p &amp;lt;- 
+data %&amp;gt;% 
+  ggplot() +
+  aes(
+    x = continent,
+    y = sum_pop,
+    fill = continent
+  ) +
+  geom_bar(stat = &amp;quot;identity&amp;quot;) +
+  theme_classic() +
+  scale_y_continuous(
+    expand = c(0,0)
+  ) +
+  easy_remove_y_axis(what = c(&amp;quot;ticks&amp;quot;, &amp;quot;line&amp;quot;)) +
+  theme(
+    legend.position = &amp;quot;top&amp;quot;
+  ) +
+  transition_time(year) +
+  labs(
+    subtitle = &amp;quot;Year: {frame_time}&amp;quot;,
+    fill = &amp;quot;&amp;quot;,
+    title = &amp;quot;How Many Human in each Continent?&amp;quot;,
+    x = &amp;quot;&amp;quot;,
+    y = &amp;quot;&amp;quot;
+    )
+
+animate(p, end_pause = 20)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://ophirbetser.netlify.app/memyselfasndi/gganimate/index.en_files/figure-html/unnamed-chunk-4-1.gif&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>יצירת גרפים בקלות</title>
+      <link>https://ophirbetser.netlify.app/memyselfasndi/%D7%99%D7%A6%D7%99%D7%A8%D7%AA-%D7%92%D7%A8%D7%A4%D7%99%D7%9D-%D7%91%D7%A7%D7%9C%D7%95%D7%AA/</link>
+      <pubDate>Sat, 02 Oct 2021 16:04:47 +0300</pubDate>
+      <guid>https://ophirbetser.netlify.app/memyselfasndi/%D7%99%D7%A6%D7%99%D7%A8%D7%AA-%D7%92%D7%A8%D7%A4%D7%99%D7%9D-%D7%91%D7%A7%D7%9C%D7%95%D7%AA/</guid>
+      <description>
+&lt;script src=&#34;https://ophirbetser.netlify.app/memyselfasndi/%D7%99%D7%A6%D7%99%D7%A8%D7%AA-%D7%92%D7%A8%D7%A4%D7%99%D7%9D-%D7%91%D7%A7%D7%9C%D7%95%D7%AA/index.en_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;style type=&#34;text/css&#34;&gt;
+h1 { text-align:center; color:#296993;}
+&lt;/style&gt;
+&lt;div style=&#34;text-align:right;&#34; dir=&#34;rtl&#34;&gt;
+&lt;p&gt;ggplot2
+היא כנראה הספריה הפופאולרית ביותר בשפת
+R
+.&lt;/p&gt;
+&lt;p&gt;היא מאפשרת ליצור גרפים יפים באופן שנותן למשתמש חופש רב בבחירת העיצוב ואופן הגצת הנתונים.&lt;/p&gt;
+&lt;p&gt;אני ממליץ בחום לכל משתמש
+R
+ללמוד לשלוט בספריה,
+אך להגיע לרמה גבוהה בה יכול לקחת זמן רב.&lt;/p&gt;
+&lt;div dir=&#34;ltr&#34;&gt;
+&lt;a href=&#34;https://cran.r-project.org/web/packages/esquisse/vignettes/get-started.html&#34;&gt;esquisse&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;היא ספריה משלימה ל
+ggplot2
+שיכולה להקל מאוד על יצירת גרפים למשתמשים חדשים,
+ולהאיץ את קצב הלמידה של הספריה.&lt;/p&gt;
+&lt;p&gt;מוזמנים לצפות בסרטון הקצר שהכנתי על
+esquisse
+כדי ללמוד איך להשתמש בה&lt;/p&gt;
+&lt;div style=&#34;text-align:center;&#34;&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/7-5G8I7Cpsw&#34; frameborder=&#34;0&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ויזואליזציה של משפט הגבול המרכזי</title>
+      <link>https://ophirbetser.netlify.app/memyselfasndi/clt/</link>
+      <pubDate>Sat, 02 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>https://ophirbetser.netlify.app/memyselfasndi/clt/</guid>
+      <description>
+&lt;script src=&#34;https://ophirbetser.netlify.app/memyselfasndi/clt/index.en_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;html dir=&#34;rtl&#34;&gt;
+&lt;p&gt;שלום לכול מי שקורא את הפוסט :)&lt;/p&gt;
+&lt;p&gt;אני רוצה לספר למי שלא מכיר על הספריה
+shiny.&lt;/p&gt;
+&lt;p&gt;shiny
+היא ספריה
+שמאפשרת לבנות אפליקציות אינטרקטיביות
+דרך
+R
+.&lt;/p&gt;
+&lt;p&gt;שימוש בכלים אינטרקטיבים כחלק מהצגת העבודה שלנו עם נתונים יכול ממש לשדרג את העניין בניתוח הנתונים שלנו ובהבנה של המשמעות שלו.&lt;/p&gt;
+&lt;p&gt;הצגה של תוצאות הניתוח, תוך בניית סיפור מעניין והגיוני היא חלק מאוד חשוב בעבודה של מדען נתונים או אנליסט. האם עץ שנופל באמצע אי מבודד אכן משמיע רעש? האם גרף שאתה היחיד בעולם שראה אכן סורטט?&lt;/p&gt;
+&lt;p&gt;בשל העניין הזה שליטה בכליי ויזאליזיה, סטורי-טליג ובניית אפליקציות יכולה לחזק מאוד הרושם שהעבודה שלכם ישאיר על הצופים בו.&lt;/p&gt;
+&lt;p&gt;שימוש נוסף בכלים האלה יכול להיות עזר כאשר נושא חדש נלמד.&lt;/p&gt;
+&lt;p&gt;אני מצרף קישור לפוסט הזה לדוגמא ממש כזאת, שבה בניתי אפליציה פשוטה אשר מדגימה את תוצאות משפט הגבול המרכזי.&lt;/p&gt;
+&lt;p&gt;המסקנה של המשפט היא שממוצעים התפלגויות מתוך מרחב דגימה כלשהוא (הכלליות היא הכוח של המשפט)
+מתפלגים באופן גבולי נורמלית.&lt;/p&gt;
+&lt;p&gt;כלומר, אם אני אגריל
+n
+הגרלות שונות
+בנות
+m
+תפציות מתוך התפלגות אחידה,
+כל הגרלה בפני עצמה תתפלג באופן גבולי אחיד,
+אך הממוצעים של ההגרלות יתפלגו באופן גבולי
+(כש n שואף לאינסוף)
+נורמלית.&lt;/p&gt;
+&lt;p&gt;מוזמנים לשחק באפליקציה, לקבל הרגשה של הבנה עמוקה יותר של מסקנות המשפט, כי אין כמו לראות דוגמא של תוצאות עבור הבנת נושאים מופשטים:&lt;/p&gt;
+&lt;div style=&#34;text-align:center;&#34; dir=&#34;ltr&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://ophir-betser.shinyapps.io/clt_app/?_ga=2.74569106.1091192915.1632655554-1160489566.1631561296&#34;&gt;clt app&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;בהמשך אני אכתוב פוסט שבו אסביר על הקוד, ועל איך בונים אפליקציה בעזרת
+shiny.&lt;/p&gt;
+&lt;p&gt;אני חושב שאם עבור כל נושא קצת מסובך תהיה לסטודנטים גישה לכלים בסגנון הזה, חווית הלימודים תהיה יותר מהנה, וקצב הלימוד יוכל להיות יותר גבוה.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>היכרות עם lubridate</title>
+      <link>https://ophirbetser.netlify.app/memyselfasndi/lubridate/</link>
+      <pubDate>Wed, 29 Sep 2021 00:00:00 +0000</pubDate>
+      <guid>https://ophirbetser.netlify.app/memyselfasndi/lubridate/</guid>
+      <description>
+&lt;script src=&#34;https://ophirbetser.netlify.app/memyselfasndi/lubridate/index.en_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;html dir=&#34;rtl&#34;&gt;
+&lt;div id=&#34;תאריך-כסוג-של-משתנה&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;תאריך כסוג של משתנה&lt;/h3&gt;
+&lt;p&gt;סוגי המשתנים שהכי שכיח להשתמש בהם ב
+R
+הם מספרים, מחרונות, ומשתנים בוליאנים
+(משתנים שמקבלים ערך של או אמת או שקר)
+.&lt;/p&gt;
+&lt;p&gt;על כל סוג משתנה ניתן לבצע פעולות,
+נניח אפשר לחבר 2 מספרים&lt;/p&gt;
+&lt;div style=&#34;text-align:left;&#34; dir=&#34;ltr&#34;&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;88 + 54&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 142&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;או להפוך את כל האותיות במחרוזת לאותיות ראשיות&lt;/p&gt;
+&lt;div style=&#34;text-align:left;&#34; dir=&#34;ltr&#34;&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;my_name &amp;lt;- &amp;#39;inigo montoya&amp;#39;
+print(toupper(my_name))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;INIGO MONTOYA&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;בניתוח נתונים אנחנו הרבה פעמים מוצאים את עצמנו עובדים עם דאטה שיש בו משמעות לזמן,
+והוא מכיל משתנה מסוג תאריך.&lt;/p&gt;
+&lt;p&gt;עבודה עם תאריכים ב
+R
+יכולה להיות מאוד מתסכלת וקשה,
+כי הפקודות הבסיסיות של השפה אינן כתובות באופן ידידותי למשתמש.&lt;/p&gt;
+&lt;p&gt;אבל אל דאגה!&lt;/p&gt;
+&lt;p&gt;יש ספריה שתעשה לכם את החיים הרבה יותר קלים ופשוטים.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;lubridate&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;lubridate&lt;/h3&gt;
+&lt;p&gt;lubridate
+היא ספריה שהמטרה שלה היא להפוך את העבודה עם משתני תאריכים לקלה.&lt;/p&gt;
+&lt;p&gt;בשימושים העיקרים שלי בה הם:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;שינוי וקטורים לפורמט תאריך (היא יודעת לעבוד אינספור פורמטים שונים)&lt;/li&gt;
+&lt;li&gt;חילוץ נתון מסוים, כמו היום בשבוע מתוך וקטור תאריכים&lt;/li&gt;
+&lt;li&gt;חישובים של הפרשי זמנים&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div id=&#34;שימוש-ב-chear-sheets&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;שימוש ב Chear Sheets&lt;/h3&gt;
+&lt;p&gt;לחלר גדול מהספריות בכי פופולאריות ב
+R
+ניתן למצוא פוסטרים שימושים
+שמסבירים איך להשתמש בפונקציות של הספריה באופן נגיש ואינטואיטיבי.&lt;/p&gt;
+&lt;p&gt;הכינוי של הפוסטרים האלו הוא
+“Cheat Sheets”
+ואפשר למצוא אותם ישר מתוך
+Rstudio
+על ידי לחיצה על&lt;/p&gt;
+&lt;div style=&#34;text-align:center;&#34; dir=&#34;ltr&#34;&gt;
+&lt;p&gt;Help -&amp;gt; Cheat sheets -&amp;gt; Browse Cheets Sheets…&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;index.en_insertimage_1.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;לאחר הלחיצה תועברו לקישור &lt;a href=&#34;https://www.rstudio.com/resources/cheatsheets/&#34;&gt;https://www.rstudio.com/resources/cheatsheets/&lt;/a&gt;
+שבין השאר, ניתן למצוא בו קובץ הסברים על lubrudate&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;index.en_insertimage_2.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;אני ממליץ להציץ בקובץ, ובקבצים מקבילים של ספריות אחרות. ניתן ללמוד מהם הרבה.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;שימוש-בספריה&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;שימוש בספריה&lt;/h3&gt;
+&lt;p&gt;אני הדגים איך לבצע את 3 המשימות הבסיסיות שיש לנו בעבודה עם תאריכים&lt;/p&gt;
+&lt;p&gt;אטען את הספריה עם pacman,
+המשמשת כמנהל הספריות ב
+R.&lt;/p&gt;
+&lt;p&gt;אם אתם לא מכירים אותה, תקראו את
+&lt;a href=&#34;https://ophirbetser.netlify.app/post/איך-לטעון-ספריות-בקלות-ב-r/&#34;&gt;הפוסט שבו אני מסביר עליה&lt;/a&gt;&lt;/p&gt;
+&lt;div style=&#34;text-align:left;&#34; dir=&#34;ltr&#34;&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pacman::p_load(lubridate)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;התאמת-פורמט-תאריך&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;1 התאמת פורמט תאריך&lt;/h4&gt;
+&lt;p&gt;לפני שאנחנו מנתחים תאריכים, ראשית יש לוודא שהפורמט של המשתנה הוא אכן פורמט של תאריך,
+ולא חלילה מחרוזת.&lt;/p&gt;
+&lt;p&gt;ראשית, אצור וקטורי מחרוזות שמכילים ״תאריכים״ במספר פורמטים שונים&lt;/p&gt;
+&lt;div style=&#34;text-align:left;&#34; dir=&#34;ltr&#34;&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;date_format_1 &amp;lt;- c(&amp;quot;2020-04-29&amp;quot;, &amp;quot;2020-09-06&amp;quot;, &amp;quot;2020-09-30&amp;quot;)
+date_format_2 &amp;lt;- c(&amp;quot;2020/04/29&amp;quot;, &amp;quot;2020/09/06&amp;quot;, &amp;quot;2020/09/30&amp;quot;)
+date_format_3 &amp;lt;- c(&amp;quot;29.4.2020&amp;quot;, &amp;quot;6.9.2020&amp;quot;, &amp;quot;30.9.2020&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;ואראה שהסוג משתנה שהם עכשיו הוא מחרוזת ולא תאריך&lt;/p&gt;
+&lt;div style=&#34;text-align:left;&#34; dir=&#34;ltr&#34;&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;print(class(date_format_1))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;character&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;print(class(date_format_2))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;character&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;print(class(date_format_3))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;character&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;הוקטור הראשון הוא במבנה ש
+R
+רוצה שתאריך יהיה בו.
+שנה, חודש ואז יום.&lt;/p&gt;
+&lt;p&gt;כדי לשנות אותו למשתנה מסוג תאריך נשתמש בפונקציה&lt;/p&gt;
+&lt;div style=&#34;text-align:left;&#34; dir=&#34;ltr&#34;&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;date_format_1 &amp;lt;- as_date(date_format_1)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+ונוודא שאכן המשתנה שונה:
+&lt;div style=&#34;text-align:left;&#34; dir=&#34;ltr&#34;&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;print(class(date_format_1))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;Date&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;מגניב.&lt;/p&gt;
+&lt;p&gt;שתי הוקטורים הנוספים הם תאריכים בפורמט קצת אחר.&lt;/p&gt;
+&lt;p&gt;הדרך לשנות להמיר אותם לתאריכים ב
+lubridate
+נראת ככה:&lt;/p&gt;
+&lt;div style=&#34;text-align:left;&#34; dir=&#34;ltr&#34;&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;date_format_2 &amp;lt;- ymd(date_format_2)
+date_format_3 &amp;lt;- dmy(date_format_3)
+
+print(date_format_2)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;2020-04-29&amp;quot; &amp;quot;2020-09-06&amp;quot; &amp;quot;2020-09-30&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;print(date_format_3)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;2020-04-29&amp;quot; &amp;quot;2020-09-06&amp;quot; &amp;quot;2020-09-30&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;ניתן לראות שאכן המשימה בוצאה, פשוט על ידי התאמת הפונקציה למשתנה התאריך במחרוזת שקיבלנו,
+כאשר
+y
+צריך להיות במקום שהחלק של השנה נצבמא בתאריך שלנו
+m
+צריך להיות במקום שהחלק של החודש נמצא בתאריך שלנו,
+ו
+d
+במקום שבו מופיע היום.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;חילוץ-מידע-מתאריכים&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;2 חילוץ מידע מתאריכים&lt;/h4&gt;
+&lt;p&gt;מעולה. הוקטורים שלנו עכשיו משתני תאריך, ואנחנו יכולים להפעיל המון פונקציות עליהם!&lt;/p&gt;
+&lt;p&gt;נניח שאני רוצה לדעת מאיזה יום בשבוע, או מאיזה תאריך בשנה התאריך שלי לקוח.&lt;/p&gt;
+&lt;p&gt;הדרך של
+lubridate
+לעשות את זה נראת ככה:&lt;/p&gt;
+&lt;div style=&#34;text-align:left;&#34; dir=&#34;ltr&#34;&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;wday(date_format_1)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 4 1 4&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;week(date_format_1)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 18 36 40&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;ובאופן דומה ניתן להוציא כל שביב מידע מהתאריכים שלכם
+דוגמאות רבות לאיך לעשות זאת ניתן למצוא ב
+Cheat Sheet
+של הספריה.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;מרחק-בין-תאריכים&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;3 מרחק בין תאריכים&lt;/h4&gt;
+&lt;p&gt;מעניין לדעת, מה היה התאריך לפני 50 יום, לכל אחד מהתאריכים בוקטור שלי&lt;/p&gt;
+&lt;div style=&#34;text-align:left;&#34; dir=&#34;ltr&#34;&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;date_format_1 - days(50)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;2020-03-10&amp;quot; &amp;quot;2020-07-18&amp;quot; &amp;quot;2020-08-11&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;קליל ופשוט, הרבה יותר טוב מהדרך של
+base-r&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;סרטון-הסבר-על-הספריה&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;סרטון הסבר על הספריה&lt;/h3&gt;
+&lt;p&gt;בסרטון הזה שהועבר כחלק
+״כלכלה בעולם הביג דאטה״ - קורס בפקולטה לכלכלה של אוניברסיטת תל אביב
+אני מסביר מעט יותר בפירוט על הספריה ועל עבודה עם תאריכים.&lt;/p&gt;
+&lt;div style=&#34;text-align:center;&#34;&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/LehJz9s2Y_A&#34; frameborder=&#34;0&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;p&gt;תהנו
+:)&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>איך לטעון ספריות בקלות ב R</title>
+      <link>https://ophirbetser.netlify.app/memyselfasndi/%D7%90%D7%99%D7%9A-%D7%9C%D7%98%D7%A2%D7%95%D7%9F-%D7%A1%D7%A4%D7%A8%D7%99%D7%95%D7%AA-%D7%91%D7%A7%D7%9C%D7%95%D7%AA-%D7%91-r/</link>
+      <pubDate>Tue, 28 Sep 2021 00:00:00 +0000</pubDate>
+      <guid>https://ophirbetser.netlify.app/memyselfasndi/%D7%90%D7%99%D7%9A-%D7%9C%D7%98%D7%A2%D7%95%D7%9F-%D7%A1%D7%A4%D7%A8%D7%99%D7%95%D7%AA-%D7%91%D7%A7%D7%9C%D7%95%D7%AA-%D7%91-r/</guid>
+      <description>
+&lt;script src=&#34;https://ophirbetser.netlify.app/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;html dir=&#34;rtl&#34;&gt;
+&lt;div id=&#34;למה-בכלל-ספריות&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;למה בכלל ספריות?&lt;/h3&gt;
+&lt;p&gt;אחד הדברים המשמעותיים ביותר שהופכים שפות קוד פתוח לחזקות ומדהימות
+הוא השימוש בספריות קוד.&lt;/p&gt;
+&lt;p&gt;מיליוני משתמשים שונים מרחבי העולם יכולים לשתף בקלות פונקציות חכמות ושימושיות שהם כותבים.
+יש בעיה? מספיק לפתור אותה פעם אחת, וכל העולם יכול להינות מפירות הקוד הספריה.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;איך-מורידים-וטוענים-ספריות&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;איך מורידים וטוענים ספריות?&lt;/h3&gt;
+&lt;p&gt;בשפת
+R
+על מנת להשתמש בספריה,
+ראשית יש להוריד אותה.
+הדבר משול ל״ללכת לקנות מצרך מהסופר ולשים אותו במקרר״.
+הדרך הקלאסית לעשות זאת היא בעזרת הפקודה:&lt;/p&gt;
+&lt;div style=&#34;text-align:left;&#34; dir=&#34;ltr&#34;&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# ggplot2 is the name of the package I wants to download
+install.packages(&amp;quot;ggplot2&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;לאחר הורדת הספריה, יש לטעון אותה.
+בהמשך למשל הסופר, הפעולה הזאת מקבילה ל״להוציא מהמקרר את המוצר שאני רוצה לעשות בו שימוש על מנת
+להכין ארוחה טעימה ועשירה״.&lt;/p&gt;
+&lt;p&gt;עושים זאת ב
+R
+כך:&lt;/p&gt;
+&lt;div style=&#34;text-align:left;&#34; dir=&#34;ltr&#34;&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# ggplot2 is the name of the package I wants to load to my environment
+library(ggplot2)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;הבאסה-ב-base-r&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;הבאסה ב base-r&lt;/h3&gt;
+&lt;p&gt;הדרישה גם להוריד וגם לטעון ספריות לפעמיים מרגיזה.
+אתה רוצה לעשות להריץ את הקוד שלך, אבל הוא נשבר, ולאחר בדיקה
+אתה מגלה שזה נובע מכך ששכחת לטעון או להוריד ספריה שדרושה להרצת הסקריפט.&lt;/p&gt;
+&lt;p&gt;דרך סופר קלילה ומגניבה לפתור את חוסר הנוחות הזה היא להשתמש במנהל ספריות.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;כיף-גדול-עם-מנהל-ספריות&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;כיף גדול עם מנהל ספריות&lt;/h3&gt;
+&lt;p&gt;pacman
+היא ספריה ב
+R
+שעושה בדיוק את זה.&lt;/p&gt;
+&lt;p&gt;פשוט מורידים אותה פעם אחת&lt;/p&gt;
+&lt;div style=&#34;text-align:left;&#34; dir=&#34;ltr&#34;&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# download pacman
+install.packages(&amp;quot;pacman&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;ולאחר מכך, הפקודה הבאה:&lt;/p&gt;
+&lt;div style=&#34;text-align:left;&#34; dir=&#34;ltr&#34;&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# load with &amp;#39;p_load&amp;#39;
+pacman::p_load(
+  ggplot2,
+  data.table,
+  caret
+)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;תטען את כל הספריות שבתוך הסוגריים,
+ואם יש ספריות שאינן מותקנות בסביבת העבודה שלכם
+pacman
+תדאג להוריד אותן!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;סרטון-הסבר-קצרצר-על-הספריה&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;סרטון הסבר קצרצר על הספריה&lt;/h3&gt;
+&lt;div style=&#34;text-align:center;&#34;&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/WxXwHcfvN3M&#34; frameborder=&#34;0&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;p&gt;תהנו
+:)&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>פוסט פתיחת הבלוג</title>
+      <link>https://ophirbetser.netlify.app/memyselfasndi/%D7%A4%D7%95%D7%A1%D7%98-%D7%A4%D7%AA%D7%99%D7%97%D7%AA-%D7%94%D7%91%D7%9C%D7%95%D7%92/</link>
+      <pubDate>Mon, 27 Sep 2021 00:00:00 +0000</pubDate>
+      <guid>https://ophirbetser.netlify.app/memyselfasndi/%D7%A4%D7%95%D7%A1%D7%98-%D7%A4%D7%AA%D7%99%D7%97%D7%AA-%D7%94%D7%91%D7%9C%D7%95%D7%92/</guid>
+      <description>
+&lt;script src=&#34;https://ophirbetser.netlify.app/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;html dir=&#34;rtl&#34;&gt;
+&lt;div id=&#34;שלום&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;שלום&lt;/h3&gt;
+&lt;p&gt;שלום לכול מי שצופה באתר הזה. קוראים לי אופיר בצר ואני בונה דרך
+R
+את האתר הנחמד הזה.&lt;/p&gt;
+&lt;p&gt;מקווה שיהיה כיף ונחמד.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

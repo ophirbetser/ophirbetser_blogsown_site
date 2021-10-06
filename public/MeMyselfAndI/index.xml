@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>אני עצמי ואנוכי | Ophir Betser</title>
+    <link>https://ophirbetser.netlify.app/memyselfandi/</link>
+      <atom:link href="https://ophirbetser.netlify.app/memyselfandi/index.xml" rel="self" type="application/rss+xml" />
+    <description>אני עצמי ואנוכי</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language>
+    <image>
+      <url>https://ophirbetser.netlify.app/memyselfandi/featured.jpeg</url>
+      <title>אני עצמי ואנוכי</title>
+      <link>https://ophirbetser.netlify.app/memyselfandi/</link>
+    </image>
+    
+  </channel>
+</rss>
