@@ -1,0 +1,24 @@
+---
+title: שלום
+author: ophir betser
+date: '2021-10-06'
+slug: שלום
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-10-06T04:28:47+03:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+
+```{css echo=FALSE}
+h1 { text-align:center; color:#296993;}
+p { text-align:right;}
+```
