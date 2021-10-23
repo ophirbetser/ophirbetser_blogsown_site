@@ -1,0 +1,31 @@
+---
+title: ספר הדרכה לתכנות R בעברית
+author: Ophir Betser
+date: '2021-10-23'
+slug: ספר-הדרכה-לתכנות-r-בעברית
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-10-23T11:44:04+03:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+
+שלום לכולם,
+
+כתבתי מדריך על תכנות בסיסי בשפת 
+R,
+שהיחודיות שלו היא שהוא כתוב בשפה העברית!
+
+קריאה מהנה!
+
+קישור לספר:
+[מבוא לתכנות R בעברית](https://ophirbetser.github.io/intro_to_R_in_hebrew/)
+
