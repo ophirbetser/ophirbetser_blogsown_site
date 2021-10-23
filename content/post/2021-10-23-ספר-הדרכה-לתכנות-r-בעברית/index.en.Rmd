@@ -17,6 +17,13 @@ image:
 projects: []
 ---
 
+```{css echo=FALSE}
+h1 { text-align:center; color:#296993;}
+p { text-align:right;}
+```
+
+<div style="text-align:right;" dir="rtl">
+
 
 שלום לכולם,
 
@@ -27,5 +34,8 @@ R,
 קריאה מהנה!
 
 קישור לספר:
+
+
 [מבוא לתכנות R בעברית](https://ophirbetser.github.io/intro_to_R_in_hebrew/)
 
+</div>
