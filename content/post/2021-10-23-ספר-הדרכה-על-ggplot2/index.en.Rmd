@@ -1,0 +1,43 @@
+---
+title: ספר הדרכה על ggplot2
+author: Ophir Betser
+date: '2021-10-23'
+slug: ספר-הדרכה-לתכנות-r-בעברית
+categories: []
+tags: []
+subtitle: 'ספר הדרכה ליצירת גרפים'
+summary: 'ספר הדרכה ליצירת גרפים'
+authors: []
+lastmod: '2021-10-23T11:44:04+03:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+```{css echo=FALSE}
+h1 { text-align:center; color:#296993;}
+p { text-align:right;}
+```
+
+<div style="text-align:right;" dir="rtl">
+
+
+שלום לכולם,
+
+כתבתי מדריך על יצירת ויזואליזציות בשפת 
+R
+בעזרת הספריה
+ggplot2,
+שהיחודיות שלו היא שהוא כתוב בשפה העברית!
+
+קריאה מהנה!
+
+קישור לספר:
+
+
+[מדריך ggplot2 בעברית](https://ophirbetser.github.io/intro_to_ggplot2_in_hebrew/)
+
+</div>

@@ -1,0 +1,41 @@
+---
+title: אינדקס ספריות שימושיות
+author: Ophir Betser
+date: '2021-10-23'
+slug: ספר-הדרכה-לתכנות-r-בעברית
+categories: []
+tags: []
+subtitle: 'ספר שמרכז מידע על ספריות שימושיות'
+summary: 'ספר שמרכז מידע על ספריות שימושיות'
+authors: []
+lastmod: '2021-10-23T11:44:04+03:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+```{css echo=FALSE}
+h1 { text-align:center; color:#296993;}
+p { text-align:right;}
+```
+
+<div style="text-align:right;" dir="rtl">
+
+
+שלום לכולם,
+
+כתבתי מדריך ספר שירכז מידע על הרבה ספריות שימושיות בשפת 
+R
+שהיחודיות שלו היא שהוא כתוב בשפה העברית!
+
+קריאה מהנה!
+
+קישור לספר:
+
+
+[אינדקס ספריות בעברית](https://ophirbetser.github.io/r_pac_index_in_heb/)
+
+</div>
