@@ -41,18 +41,10 @@ options(digits=6)   # Limits the number of digits printed
 pacman::p_load(
           pacman, 
           gganimate,
-          ggthemes,
-          gapminder,
           data.table,
           tidyverse,
-          patchwork,
-          forcats,
-          ggeasy,
-          visdat,
-          openxlsx,
-          DT, 
-          shiny, 
-          esquisse)</code></pre>
+          ggeasy
+)</code></pre>
 <pre class="r"><code>graph1 = gapminder %&gt;%
   ggplot(aes(x=gdpPercap, y=lifeExp, color=continent, size=pop)) +
   geom_point(alpha = 0.7, stroke = 0) +
@@ -76,17 +68,14 @@ graph1.animation = graph1 +
 
 graph1.animation</code></pre>
 <p><img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-3-1.gif" /><!-- --></p>
-<pre class="r"><code>options(scipen=999) # Disables scientific notation          
-data &lt;- gapminder %&gt;% as.data.table()
+<pre class="r"><code>data &lt;- gapminder %&gt;% as.data.table()
 
 data &lt;- 
 data[,
     .(sum_pop = sum(pop)),
-    by = .(continent, year)]</code></pre>
-<pre><code>## Warning in gsum(pop): The sum of an integer column for a group was more
-## than type &#39;integer&#39; can hold so the result has been coerced to &#39;numeric&#39;
-## automatically for convenience.</code></pre>
-<pre class="r"><code>data$continent &lt;- 
+    by = .(continent, year)]
+
+data$continent &lt;- 
   fct_reorder(
     data$continent,
     -data$sum_pop,

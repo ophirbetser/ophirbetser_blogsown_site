@@ -48,18 +48,10 @@ options(digits=6)   # Limits the number of digits printed
 pacman::p_load(
           pacman, 
           gganimate,
-          ggthemes,
-          gapminder,
           data.table,
           tidyverse,
-          patchwork,
-          forcats,
-          ggeasy,
-          visdat,
-          openxlsx,
-          DT, 
-          shiny, 
-          esquisse)
+          ggeasy
+)
 
 
 ```
@@ -91,8 +83,7 @@ graph1.animation = graph1 +
 graph1.animation
 ```
 
-```{r cache=TRUE}
-options(scipen=999) # Disables scientific notation          
+```{r message=FALSE, warning=FALSE, cache=TRUE}
 data <- gapminder %>% as.data.table()
 
 data <- 
