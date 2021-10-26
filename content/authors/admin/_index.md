@@ -29,7 +29,7 @@ superuser: true
 title: Ophir Betser
 ---
 
-Hey!
+Hey!  
+welcome to my website :)
 
-welcom to my website  
-
+My [CV](https://github.com/ophirbetser/CV/blob/master/CV.pdf)

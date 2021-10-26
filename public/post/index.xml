@@ -117,18 +117,10 @@ options(digits=6)   # Limits the number of digits printed
 pacman::p_load(
           pacman, 
           gganimate,
-          ggthemes,
-          gapminder,
           data.table,
           tidyverse,
-          patchwork,
-          forcats,
-          ggeasy,
-          visdat,
-          openxlsx,
-          DT, 
-          shiny, 
-          esquisse)&lt;/code&gt;&lt;/pre&gt;
+          ggeasy
+)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;graph1 = gapminder %&amp;gt;%
   ggplot(aes(x=gdpPercap, y=lifeExp, color=continent, size=pop)) +
   geom_point(alpha = 0.7, stroke = 0) +
@@ -152,17 +144,14 @@ graph1.animation = graph1 +
 
 graph1.animation&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;https://ophirbetser.netlify.app/post/gganimate/index.en_files/figure-html/unnamed-chunk-3-1.gif&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;options(scipen=999) # Disables scientific notation          
-data &amp;lt;- gapminder %&amp;gt;% as.data.table()
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data &amp;lt;- gapminder %&amp;gt;% as.data.table()
 
 data &amp;lt;- 
 data[,
     .(sum_pop = sum(pop)),
-    by = .(continent, year)]&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Warning in gsum(pop): The sum of an integer column for a group was more
-## than type &amp;#39;integer&amp;#39; can hold so the result has been coerced to &amp;#39;numeric&amp;#39;
-## automatically for convenience.&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data$continent &amp;lt;- 
+    by = .(continent, year)]
+
+data$continent &amp;lt;- 
   fct_reorder(
     data$continent,
     -data$sum_pop,
